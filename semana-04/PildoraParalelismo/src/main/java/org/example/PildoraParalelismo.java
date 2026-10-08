@@ -13,11 +13,11 @@ public class PildoraParalelismo {
             long inicioSecuencial = System.currentTimeMillis();
 
             System.out.println("       -> Lanzando prceso 1 ( y esperando que muera...");
-            //process es el numerode repeticiones
+            //process es el numero de repeticiones
             Process p1 = new ProcessBuilder("ping", "-n", "2", "127.0.0.1").start();
-            p1.waitFor();//Cuidado: Java se congela aqui. El proceso 2 aun no existe
-            // Una vez que el proceso 1 termina , por fin lanzamos el SEGUNDO proceso
-            System.out.println("       -> Lanzando prceso 2 ( y esperando que muera...");
+            p1.waitFor();//Cuidado: Java se congela aquí. El proceso 2 aún no existe
+            // Una vez que el proceso 1 termina, por fin lanzamos el SEGUNDO proceso
+            System.out.println("       -> Lanzando proceso 2 ( y esperando que muera...");
             Process p2 = new ProcessBuilder("ping", "-n", "2", "8.8.8.8").start();
             p1.waitFor();//Java se vuelve a congelar
 
@@ -52,6 +52,5 @@ public class PildoraParalelismo {
         } catch (InterruptedException e){
             System.out.println("ERROR: La espera fue interrumpida de forma inesperado");
         }
-
     }
 }

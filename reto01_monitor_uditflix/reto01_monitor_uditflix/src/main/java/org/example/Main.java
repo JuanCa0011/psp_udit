@@ -13,13 +13,14 @@ public class Main {
         System.out.println("======================================");
 
         // PASO 1: Matriz bidimensional [5][2] para guardar el nombre del vídeo
-        // y su dirección de comprobación IP (127.0.0.1 -> ACTIVO, IP inventada -> CAÍDO).
+        // y su dirección de comprobación IP (127.0.0.1 -> ACTIVO, IP inventada ->
+        // CAÍDO).
         String[][] videos = {
-                {"Animación 3D", "10.255.255.1"}, // Dirección inexistente (CAÍDO)
-                {"Videojuegos", "10.255.255.2"},  // Dirección inexistente (CAÍDO)
-                {"Kotlin", "10.255.255.3"},       // Dirección inexistente (CAÍDO)
-                {"Android", "127.0.0.1"},         // Dirección activa
-                {"Flutter", "127.0.0.1"}          // Dirección activa
+                { "Animación 3D", "10.255.255.1" }, // Dirección inexistente (CAÍDO)
+                { "Videojuegos", "10.255.255.2" }, // Dirección inexistente (CAÍDO)
+                { "Kotlin", "10.255.255.3" }, // Dirección inexistente (CAÍDO)
+                { "Android", "127.0.0.1" }, // Dirección activa
+                { "Flutter", "127.0.0.1" } // Dirección activa
         };
 
         // PASO 2: Recorrer la matriz mediante un bucle for tradicional
@@ -34,8 +35,7 @@ public class Main {
                 // OJO: En Windows se usa "-n" y un timeout con "-w" (ej: -w 1000 ms)
                 // para que los vídeos caídos no tarden demasiado en responder.
                 ProcessBuilder pb = new ProcessBuilder(
-                        "ping", "-n", "1", "-w", "1000", ipComprobacion
-                );
+                        "ping", "-n", "1", "-w", "1000", ipComprobacion);
 
                 // Unir la salida estándar y el canal de errores a uno solo
                 pb.redirectErrorStream(true);
@@ -48,8 +48,7 @@ public class Main {
 
                 // PASO 5: PREPARAR la lectura de la salida del proceso
                 BufferedReader lector = new BufferedReader(
-                        new InputStreamReader(process.getInputStream())
-                );
+                        new InputStreamReader(process.getInputStream()));
                 String linea;
 
                 // Leer todas las líneas emitidas por el comando ping

@@ -24,7 +24,7 @@ public class PildoraMonitor {
             //              (siempre responde, simula un servicio ACTIVO)
             // OJO "-n" solo vale en Windows. En Linux y Mac seria "-c"
             ProcessBuilder pb = new ProcessBuilder(
-                    "ping", "-n", "1", "127.0.0.1"
+                    "ping", "-n", "1", "127.0.0.x"
             );
 
             // PASO 2: UNIR las dos canales de salida

@@ -41,7 +41,7 @@ public class PildoraParalelismo {
 
             System.out.println("   -> Bloqueando Java para recoger resultados");
                     p3.waitFor();
-                    p3.waitFor();
+                    p4.waitFor();
             long finParalelo = System.currentTimeMillis();
             System.out.println(" TIEMPO TOTAL PARELELO: " + (finParalelo - inicioParalelo) + "ms\n");
             System.out.println("=====================================");
